@@ -1,0 +1,19 @@
+{% load static %}
+<body>
+    <header class="header">
+      <div class="container flex">
+        <div class="header-logo">
+          <h1>Simple Recipes</h1>
+        </div>
+        <div class="header-search">
+          <form action="">
+            <input type="search" />
+            <input type="button" value="Pesquisar" />
+          </form>
+        </div>
+        <div class="header-user">
+          <span>Ola, Fulana!</span>
+          <img src="{% static 'recipes/images/carla.png' %}" alt="Carla" />
+        </div>
+      </div>
+    </header>
