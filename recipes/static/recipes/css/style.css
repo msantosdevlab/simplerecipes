@@ -73,6 +73,9 @@ h2{
 
 .cat img {
   width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 10px;
 }
 
 .cat {
@@ -115,6 +118,10 @@ h2{
 
 .details{
     justify-content: space-between;
+}
+
+.details > * {
+  font-size: 12px;
 }
 
 

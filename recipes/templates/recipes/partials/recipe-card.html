@@ -1,29 +1,27 @@
-{% load static %} 
-
 {% block recipes %}
-<a href="/recipes/3/">
+<a href="{% url 'recipes:recipe' recipe.id %}">
   <div class="card">
     <div class="card-thumb">
-      <img src="{% static 'recipes/images/menu44.jpg' %}" alt="" />
+      <img src="{{ recipe.cover.url }}" alt="" />
     </div>
     <div class="card-content">
-      <h4>Titulo da receita</h4>
+      <h4>{{recipe.title}}</h4>
       <div class="details flex">
-        <div class="user">Joao</div>
-        <div class="date">30/10/2024</div>
-        <div class="category">Café da manhã</div>
+        <div class="user">{{recipe.author.first_name}} {{recipe.author.last_name}}</div>
+        <div class="date">{{ recipe.created_at|date:"d/m/Y" }} às {{ recipe.created_at|date:"H:i" }}</div>
+        <div class="category">{{recipe.category.name}}</div>
       </div>
       <div class="resume">
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequatur inventore ullam voluptatibus minima.</p>
+        <p>{{recipe.description}}</p>
       </div>
       <div class="info flex">
         <div class="time">
           <p class="info-title">Preparo</p>
-          <p>10 minutos</p>
+          <p>{{ recipe.preparation_time }} {{ recipe.preparation_time_unit }}</p>
         </div>
         <div class="servings">
           <p class="info-title">Porções</p>
-          <p>10 Porções</p>
+          <p>{{ recipe.servings }} {{ recipe.servings_unit }}</p>
         </div>
       </div>
     </div>

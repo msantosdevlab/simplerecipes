@@ -1,9 +1,6 @@
-
-{% load static %} 
-
 {% block categories %}
 <div class="cat">
-  <img src="{% static 'recipes/images/cat.png' %}" alt="Categoria" />
-  <h3 class="cat-title">Pizza</h3>
+  <img src="{{category.cover.url}}" alt="Categoria" />
+  <h3 class="cat-title">{{category.category.name}}</h3>
 </div>
 {% endblock categories %}
