@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include 'recipes/partials/head.html' %}
+    <title>{% block title %} Recipes {% endblock title %}</title>
+  </head>
+  <body>
+    {% include 'recipes/partials/header.html' %}
+
+    <section class="recipe">
+      <div class="container">
+        <div class="card">
+            {% block recipe_detail %}
+            {% endblock recipe_detail %}
+        </div>
+      </div>
+    </section>
+
+    <footer>
+     {% include 'recipes/partials/footer.html' %}
+    </footer>
+  </body>
+</html>

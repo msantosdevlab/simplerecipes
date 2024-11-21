@@ -1,0 +1,9 @@
+{% extends 'global/base_home.html' %}
+
+{% block categories %}
+    {% include 'recipes/partials/category.html' %}
+{% endblock categories %}
+
+{% block recipes %}
+    {% include 'recipes/partials/recipe-card.html' %}
+{% endblock recipes %}
