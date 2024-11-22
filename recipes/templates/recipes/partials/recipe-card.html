@@ -5,23 +5,23 @@
       <img src="{{ recipe.cover.url }}" alt="" />
     </div>
     <div class="card-content">
-      <h4>{{recipe.title}}</h4>
+      <h4 class="title">{{recipe.title}}</h4>
       <div class="details flex">
         <div class="user">{{recipe.author.first_name}} {{recipe.author.last_name}}</div>
         <div class="date">{{ recipe.created_at|date:"d/m/Y" }} às {{ recipe.created_at|date:"H:i" }}</div>
         <div class="category">{{recipe.category.name}}</div>
       </div>
-      <div class="resume">
-        <p>{{recipe.description}}</p>
-      </div>
+      <div class="description">
+        <p class="text">{{recipe.description}}</p>
+      </div>      
       <div class="info flex">
         <div class="time">
-          <p class="info-title">Preparo</p>
-          <p>{{ recipe.preparation_time }} {{ recipe.preparation_time_unit }}</p>
+          <p class="info-title"><i class="fa-solid fa-stopwatch"></i> Prep Time</p>
+          <p class="info-content">{{ recipe.preparation_time }} {{ recipe.preparation_time_unit }}</p>
         </div>
         <div class="servings">
-          <p class="info-title">Porções</p>
-          <p>{{ recipe.servings }} {{ recipe.servings_unit }}</p>
+          <p class="info-title"><i class="fa-solid fa-cheese"></i> Servings</p>
+          <p class="info-content">{{ recipe.servings }} {{ recipe.servings_unit }}</p>
         </div>
       </div>
     </div>

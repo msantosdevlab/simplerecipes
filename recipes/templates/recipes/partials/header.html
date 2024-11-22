@@ -6,11 +6,12 @@
           <a href="{% url 'recipes:index' %}"><h1>Simple Recipes</h1></a>
         </div>
         <div class="header-search">
-          <form action="">
-            <input type="search" />
-            <input type="button" value="Pesquisar" />
-          </form>
-        </div>
+          <form action="" class="flex">
+            <input type="search" placeholder="Enter your search..." />
+            <button type="submit">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </div>        
         <div class="header-user">
           <span>Ola, Fulana!</span>
           <img src="{% static 'recipes/images/carla.png' %}" alt="Carla" />

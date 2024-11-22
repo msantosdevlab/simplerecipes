@@ -3,30 +3,36 @@
 
 
 {% block recipe_detail %} 
-  <div class="card-thumb">
-    <img src="{% static 'recipes/images/menu44.jpg' %}" alt="" />
+
+<div class="card-thumb view">
+  <img src="{{ recipe.cover.url }}" alt="" />
+</div>
+<div class="card-content">
+  <h4 class="title">{{recipe.title}}</h4>
+  <div class="details view flex">
+    <div class="user">{{recipe.author.first_name}} {{recipe.author.last_name}}</div>
+    <div class="date">{{recipe.created_at|date:"d/m/Y"}} às {{recipe.created_at|date:"H:i"}}</div>
+    <div class="category">{{recipe.category.name}}</div>
   </div>
-  <div class="card-content">
-    <h4>{% block title %}Titulo da receita{% endblock title %}</h4>
-    <div class="details flex">
-      <div class="user">Joao</div>
-      <div class="date">30/10/2024</div>
-      <div class="category">Café da manhã</div>
+  <div class="description">
+    <p class="text">{{recipe.description}}</p>
+  </div>      
+  <div class="info view flex">
+    <div class="time">
+      <p class="info-title"><i class="fa-solid fa-stopwatch"></i> Prep Time</p>
+      <p class="info-content">{{recipe.preparation_time}} {{recipe.preparation_time_unit}}</p>
     </div>
-    <div class="resume">
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequatur inventore ullam voluptatibus minima.</p>
+    <div class="servings view">
+      <p class="info-title"><i class="fa-solid fa-cheese"></i> Servings</p>
+      <p class="info-content">{{recipe.servings}} {{recipe.servings_unit}}</p>
     </div>
-    <div class="info flex">
-      <div class="time">
-        <p class="info-title">Preparo</p>
-        <p>10 minutos</p>
-      </div>
-      <div class="servings">
-        <p class="info-title">Porções</p>
-        <p>10 Porções</p>
-      </div>
-    </div>
+  </div>
+  <div class="preparation">
+    <div class="preparation-title"><p>Preparation:</p></div>
+    <p>{{recipe.preparation_steps}}</p>
   </div>
 </div>
+
+
 {% endblock recipe_detail %}
 
