@@ -1,11 +1,7 @@
 {% extends 'global/base_detail.html' %}
-{% load static %}
-
-
 {% block recipe_detail %} 
-
 <div class="card-thumb view">
-  <img src="{{ recipe.cover.url }}" alt="" />
+  <img src="{{recipe.cover_url}}" alt="{{recipe.title}}" />
 </div>
 <div class="card-content">
   <h4 class="title">{{recipe.title}}</h4>
