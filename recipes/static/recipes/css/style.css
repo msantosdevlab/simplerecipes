@@ -114,7 +114,8 @@ h2 {
 }
 
 .cats-list {
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 20px;
 }
 
 .cat img {

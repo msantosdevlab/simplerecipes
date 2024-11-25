@@ -7,7 +7,7 @@
 {% endblock categories %}
 
 {% block recipes %}
-    {% for recipe in recipes %}
+    {% for recipe in recipes|slice:"6" %}
      {% include 'recipes/partials/recipe-card.html' %}
     {% endfor %}
 {% endblock recipes %}
