@@ -1,0 +1,9 @@
+{% extends 'global/base_list_category.html' %}
+
+{% block namecategory %} Category: {{ category_name }} {% endblock namecategory %}
+
+{% block recipescategory %}
+    {% for recipe in recipes %}
+     {% include 'recipes/partials/recipe-card.html' %}
+    {% endfor %}
+{% endblock recipescategory %}

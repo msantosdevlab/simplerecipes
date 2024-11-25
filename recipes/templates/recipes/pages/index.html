@@ -1,13 +1,13 @@
 {% extends 'global/base_home.html' %}
 
 {% block categories %}
-    {% for category in categories %}
+    {% for category in categories|slice:"6" %}
         {% include 'recipes/partials/category.html' %}
     {% endfor %}
 {% endblock categories %}
 
 {% block recipes %}
-    {% for recipe in recipes|slice:"6" %}
+    {% for recipe in recipes %}
      {% include 'recipes/partials/recipe-card.html' %}
     {% endfor %}
 {% endblock recipes %}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include 'recipes/partials/head.html' %}
+    <title>{% block title %} Category {% endblock title %}</title>
+  </head>
+  <body>
+    {% include 'recipes/partials/header.html' %}
+
+    <section class="recipes">
+      <div class="container">
+        <div class="recipes-header">
+          <h2>{% block namecategory %} {% endblock namecategory %}</h2>
+        </div>
+        <div class="recipes-list">
+            {% block recipescategory %} {% endblock recipescategory %}
+        </div>
+      </div>
+    </section>
+
+    <footer>{% include 'recipes/partials/footer.html' %}</footer>
+  </body>
+</html>

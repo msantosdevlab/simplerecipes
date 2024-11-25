@@ -15,6 +15,7 @@ a {
 
 header {
   border-bottom: 1px solid #ccc;
+  margin-bottom: 60px;
 }
 
 .header-logo {
@@ -93,7 +94,6 @@ header {
 /*    CATEGORIES HOME         */
 
 .categories {
-  padding-top: 60px;
   margin-bottom: 60px;
 }
 
@@ -115,7 +115,7 @@ h2 {
 
 .cats-list {
   justify-content: flex-start;
-  gap: 20px;
+  gap: 40px;
 }
 
 .cat img {
@@ -129,6 +129,7 @@ h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
 }
 
 

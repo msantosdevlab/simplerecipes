@@ -1,6 +1,8 @@
 {% block categories %}
 <div class="cat">
-  <img src="{{category.cover.url}}" alt="Categoria" />
-  <h3 class="cat-title">{{category.name}}</h3>
+  <a href="{% url 'recipes:category' category.id %}">
+    <img src="{{ category.cover.url }}" alt="{{ category.name }}" />
+    <h3 class="cat-title">{{ category.name }}</h3>
+  </a>
 </div>
 {% endblock categories %}

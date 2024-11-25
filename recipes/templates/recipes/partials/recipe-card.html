@@ -2,17 +2,24 @@
 <a href="{% url 'recipes:recipe' recipe.id %}">
   <div class="card">
     <div class="card-thumb view">
-      <img src="{{recipe.cover_url}}" alt="{{recipe.title}}" />
+      <img src="{{ recipe.cover_url }}" alt="{{ recipe.title }}" />
     </div>
     <div class="card-content">
-      <h4 class="title">{{recipe.title}}</h4>
+      <h4 class="title">{{ recipe.title }}</h4>
       <div class="details flex">
-        <div class="user">{{recipe.author.first_name}} {{recipe.author.last_name}}</div>
-        <div class="date">{{ recipe.created_at|date:"d/m/Y" }} às {{ recipe.created_at|date:"H:i" }}</div>
-        <div class="category">{{recipe.category.name}}</div>
+        <div class="user">
+          <i class="fa-solid fa-user"></i>               
+          {% if recipe.author.first_name %}
+            {{ recipe.author.first_name }} {{ recipe.author.last_name }}
+          {% else %}
+            {{ recipe.author.username }}
+          {% endif %}
+        </div>
+        <div class="date"><i class="fa-solid fa-calendar-days"></i> {{ recipe.created_at|date:"d/m/Y" }} às {{ recipe.created_at|date:"H:i" }}</div>
+        <div class="category"><i class="fa-solid fa-layer-group"></i> {{ recipe.category.name }}</div>
       </div>
       <div class="description">
-        <p class="text">{{recipe.description}}</p>
+        <p class="text">{{ recipe.description }}</p>
       </div>      
       <div class="info flex">
         <div class="time">

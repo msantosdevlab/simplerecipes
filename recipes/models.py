@@ -5,7 +5,7 @@ from django.db import models
 # Create your models here.
 class Category(models.Model):
     name =  models.CharField(max_length=65)
-    cover = models.ImageField(upload_to='recipes/covers/%Y/%m/%d/')
+    cover = models.ImageField(upload_to='recipes/covers/%Y/%m/%d/', null=True, blank=False)
 
     def __str__(self):
         return self.name
@@ -16,7 +16,7 @@ class Recipe(models.Model):
     slug = models.SlugField()
     preparation_time = models.IntegerField()
     preparation_time_unit = models.CharField(max_length=65)
-    servings_time = models.IntegerField()
+    servings = models.IntegerField()
     servings_unit = models.CharField(max_length=65)
     preparation_steps = models.TextField()
     preparation_steps_is_html = models.BooleanField(default=False)
